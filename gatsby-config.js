@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Hirsch Plumbing Inc.',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -34,6 +34,10 @@ module.exports = {
         respectDNT: true,
         exclude: ["/preview/**"],
       },
+    },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {},
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
