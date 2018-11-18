@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const App = styled.div`
-  min-height: 100vh;
   font-family: Verdana;
   display: grid;
   grid-template-areas:
