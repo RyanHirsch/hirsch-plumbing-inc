@@ -32,7 +32,7 @@ const Layout = ({ children }) => (
             {
               name: "description",
               content:
-                "Hirsch Plumbing is a locally owned and operating plumbing service",
+                "Hirsch Plumbing is locally owned and operated by Nathan Hirsch. Servicing Waterloo, Columbia, Monroe County, and surrounding areas since 2015.",
             },
             {
               name: "keywords",
