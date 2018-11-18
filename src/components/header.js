@@ -1,17 +1,23 @@
 import React from "react";
 import { Link } from "gatsby";
-import Logo from "../images/logo.svg";
 import styled from "styled-components";
+
+import Logo from "../images/logo.svg";
+import { phoneNumber } from "../utils/format";
+import theme from "../utils/theme";
 
 const legacyGreen = "#377F72";
 const green = "rgb(0, 95, 44)";
 const AppHeader = styled.header`
-  background-color: ${green};
-  color: white;
-  margin-bottom: 1.45rem;
+  color: ${green};
+  grid-area: header;
+  margin: 0 1rem;
 
   h1 {
+    font-size: 1.75rem;
     font-weight: bold;
+    text-align: left;
+    margin-bottom: 0;
   }
 
   a {
@@ -19,39 +25,74 @@ const AppHeader = styled.header`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: ${green};
     text-decoration: none;
   }
 
   .header__container {
     margin: 0 auto;
     max-width: 960px;
-    padding: 1.45rem 1.0875rem;
     text-align: center;
   }
 
   .header__logo {
     height: 5rem;
-    fill: white;
+    fill: ${green};
     margin-right: 1rem;
   }
 
   .header__contact-info {
+    overflow: hidden;
+  }
+
+  .header__contact-info ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
     font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: -3px;
+  }
+  .header__contact-info li {
+    flex-grow: 1;
+    flex-basis: auto;
+    margin: 0.25em 0;
+    padding: 0 1em;
+    text-align: center;
+    border-left: 3px solid ${theme.colors.primary};
+    background-color: #fff;
+  }
+
+  @media only screen and (min-width: 600px) {
+    margin: 0;
+    h1 {
+      font-size: 2rem;
+    }
   }
 `;
 
-const Header = ({ siteTitle }) => (
+const Header = ({ title, phone, address }) => (
   <AppHeader>
     <div className="header__container">
       <h1>
         <Link to="/">
           <Logo className="header__logo" />
-          {siteTitle}
+          {title}
         </Link>
       </h1>
       <div className="header__contact-info">
-        <a href="tel:6189777821">(618) 977-7821</a>
+        <ul>
+          <li>
+            <div className="header__address">{address}</div>
+          </li>
+          <li>
+            <a className="header__phone" href={`tel:${phone}`}>
+              {phoneNumber(phone)}
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </AppHeader>
