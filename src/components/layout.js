@@ -49,8 +49,8 @@ const Layout = ({ children }) => (
             phone={data.site.siteMetadata.phone}
             address={data.site.siteMetadata.address}
           />
-          <Navigation />
-          <Content>{children}</Content>
+          {/* <Navigation /> */}
+          {/* <Content>{children}</Content> */}
           {/* <Footer /> */}
         </App>
       </>
