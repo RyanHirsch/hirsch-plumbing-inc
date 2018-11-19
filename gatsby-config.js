@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "Hirsch Plumbing Inc.",
     phone: "6189777821",
-    address: "4040 Rolling Hills, Fults IL",
+    address: "4803 Red Oak Drive, Waterloo IL",
   },
   plugins: [
     "gatsby-plugin-react-helmet",
