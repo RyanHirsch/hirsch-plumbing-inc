@@ -6,13 +6,21 @@ import styled from "styled-components";
 import Layout from "../components/layout";
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  /* align-items: center; */
+  display: block;
 
   .about__image {
+    margin: 0 auto;
     max-width: 300px;
-    height: 399px;
+  }
+  @media only screen and (min-width: 600px) {
+    display: grid;
+    grid-template-columns: 320px auto;
+    .about__image {
+      margin: 0;
+      margin: 10px;
+    }
+    /* flex-direction: column; */
+    /* align-items: center; */
   }
 `;
 
