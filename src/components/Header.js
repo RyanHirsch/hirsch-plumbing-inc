@@ -45,7 +45,7 @@ const AppHeader = styled.header`
     overflow: hidden;
   }
 
-  .header__contact-info ul {
+  ul {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -55,20 +55,25 @@ const AppHeader = styled.header`
     justify-content: space-between;
     margin-left: -3px;
   }
-  .header__contact-info li {
+
+  li {
+    font-size: 0.85rem;
     flex-grow: 1;
     flex-basis: auto;
-    margin: 0.25em 0;
-    padding: 0 1em;
+    margin: 0;
+    padding: 0.25rem 1rem;
     text-align: center;
     border-left: 3px solid ${theme.colors.primary};
-    background-color: #fff;
   }
 
   @media only screen and (min-width: 600px) {
     margin: 0;
     h1 {
       font-size: 2rem;
+    }
+
+    li {
+      font-size: 1rem;
     }
   }
 `;
@@ -84,13 +89,9 @@ const Header = ({ title, phone, address }) => (
       </h1>
       <div className="header__contact-info">
         <ul>
-          <li>
-            <div className="header__address">{address}</div>
-          </li>
-          <li>
-            <a className="header__phone" href={`tel:${phone}`}>
-              {phoneNumber(phone)}
-            </a>
+          <li className="header__address">{address}</li>
+          <li className="header__phone">
+            <a href={`tel:${phone}`}>{phoneNumber(phone)}</a>
           </li>
         </ul>
       </div>
